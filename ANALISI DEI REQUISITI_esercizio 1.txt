@@ -1,0 +1,12 @@
+ANALISI DEI REQUISITI
+
+La consegna dell’esercizio vuole un programma che sia in grado di gestire una rubrica telefonica, facendo in modo che alcuni dei contatti siano oscurati e visibili solamente con l’utilizzo di una password. Il mio programma dovrà avere:
+
+un array gestore che contenga i vari contatti 
+
+vari metodi per la sua gestione:
+1_ inserimento;
+2_ visualizza;
+3_ black box;
+4_ chiamate;
+5_ visualizza_chiamate;

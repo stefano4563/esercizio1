@@ -1,0 +1,15 @@
+ANALISI FUNZIONALE
+
+Il programma sarà composto da 3 file java:
+Una cartella tools che contiene un file java intitolato Utility,questo a sua volta contiene metodi utili per il layout  (wait, clear screen, menu).
+
+Un file java con il nome di Main che sarà il cuore del programma, infatti la sua struttura di rubrica telefonica, è tutta compresa al suo interno.
+Questo comprende anche i metodi che permettono di completare la rubrica:
+1_ inserimento (inserisce un nuovo contatto);
+2_ visualizza (visualizza in contatti dentro la rubrica, non mostra quelli nascosti);
+3_ black box (visualizza tutti i contatti dentro la rubrica, mostra quelli nascosti);
+4_ chiamata (inserisce un numero presente la rubrica per poter chiamare il contatto);
+5_ visualizza chiamate (visualizza le chiamate fatte);
+
+Una classe chiamata Contatto che contiene attributi che vanno a descrivere gli elementi inseriti dall’utente all’interno dell’array, ad esempio nome, cognome, numero, tipologia e il più importante il nascosto, attributo che sceglie se l’utente vuole far vedere oppure no il contatto all’interno del metodo che vedremo dopo nominato “visualizza chiamate” e “visualizza”.
+

@@ -1,0 +1,80 @@
+ANALISI TECNICA
+
+Il programma è composto da tre file:
+
+UTILITY: questo file java è contenuto all’interno del package tools. Il file contiene tutti i metodi che andranno a comporre il menù, il clear screen e il wait, ovvero tutti quei metodi che si occupano della parte grafica.
+
+CONTATTO: questo file java contiene la classe nominata Contatto. Questa è composta da degli attributi: nome, cognome, numero, tipo (il quale comprende casa, personale, lavoro) e nascosto. Troviamo anche il metodo stampa che serve a stampare nella corretta maniera il contatto.
+
+return String.format("nome: %s, cognome: %s, numero: %s, tipologia: %s", nome,cognome, numero, tipo.toString());
+  
+MAIN: il main permette di gestire la rubrica, selezionando con un numero i vari metodi che vedremo. Lavora grazie ad un do while e uno switch; il tutto funziona grazie al valore booleano fine, questo permette di fermare il programma oppure di andare avanti nella sistemazione della rubrica. 
+
+Il primo metodo che permette di completare la rubrica è “l’inserimento”.Con questo metodo è possibile creare ed inserire nel vettore gestore (che ha caratteristiche prese dalla classe Contatto, viene dichiarato con Contatto [] contatto = new Contatto();, questo viene inserito dentro l’array gestore dichiarato con: Contatto [] gestore = new Contatto[3]; max 3 contatti).
+Ogni contatto inserito ha le seguenti caratteristiche: nome, cognome, numero, tipologia (grazie ad uno switch permette di scegliere: personale, lavoro, famiglia ) e nascosto ( contatti che si visualizzano solo nella black box ).
+
+Il secondo metodo è il “visualizza”, questo permette di visualizzare i contatti contenuti nell’array gestore ( i contatti nascosti non saranno visibili e sostituiti dalla denominazione “contatto nascosto” ).
+Questo è strutturato con un for e con un if ed else, che stampa tutti i contatti:
+for (int i = 0; i < posizione; i++) {
+   //scelgo l'elemento del vettore
+   Contatto elemento = gestore[i];
+   if(elemento.nascosto==falso){
+       System.out.println(gestore[i].stampa());
+   }
+   else{
+       System.out.println("contatto nascosto");
+   }
+}
+
+Il terzo metodo è la “black box” , il suo scopo è simile al visualizza . Nello specifico : per accedervi serve inserire una password ( bassotto82) , immessa questa il metodo farà visualizzare tutti i contatti senza censure. 
+public static void black_box(Contatto [] gestore, Scanner in, int posizione){
+System.out.println("inserisci la password");
+String password = in.nextLine();
+String password2 = "bassotto82";
+while(!Objects.equals(password, password2)){
+       System.out.println("password errata, riprova");
+       password = in.nextLine();
+}
+   }
+
+La 4° parte dello switch è “ chiamata”, lo scopo è quello di inserire un numero presente in rubrica e di poter simulare una telefonata . In questo modo c’è un ulteriore array chiamato telefonate (max 10) dichiarato così: String [] chiamate = new string[10];.
+Questo array servirà per il quinto metodo ossia per registrare i numeri inseriti e confrontarli con i numeri della rubrica . In questo modo si visualizzano le varie chiamate.
+case 4:{
+   System.out.println("inserisci il numero della contatto");
+   numero2 = in.nextLine();
+   for(int i=0; i<posizione; i++){
+       if(Objects.equals(numero2, gestore[i].numero)){
+           System.out.println("chiamata in corso...");
+
+
+           chiamate[posizione2] = numero2;
+
+
+       }
+
+
+       posizione2++;
+   }
+   break;
+
+Infine l’ultimo metodo è il visualizza_chiamate, questo metodo fa vedere a schermo i numeri dei contatti che sono stati chiamati e questa è la sua parte di codice
+public static void visualizza_chiamate(String [] chiamate, Contatto [] gestore, int posizione, int vero){
+   for (int j = 0; j <  posizione; j++) {
+       if(Objects.equals(chiamate[j], gestore[j].numero)){
+           if(gestore[j].nascosto == vero){
+               System.out.println("contatto nascosto");
+           }
+           else{
+               System.out.println(gestore[j].stampa());
+           }
+       }
+   }
+}
+
+la sua funzione è molto simile al visualizza.
+
+
+EVENTUALI PROBLEMI
+
+Il codice purtroppo presenta un errore nelle chiamate che non sono stato in grado di correggere, infatti nel visualizza_chiamate, il metodo stampa solo il primo contatto che si è chiamato, gli altri non li stampa e passa subito alla fase successiva del programma.
+
